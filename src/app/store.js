@@ -1,18 +1,18 @@
-import {configureStore} from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
 // TODO: Default reducer yozilgan, bunga hozircha tegmay turing.
-const initialState = {value: 0}
+const initialState = { value: 0 };
 
 function counterReducer(state = initialState, action = {}) {
   switch (action.type) {
-    case 'increment':
-      return {...state, value: state.value + 1}
-    case 'decrement':
-      return {...state, value: state.value - 1}
-    case 'incrementByAmount':
-      return {...state, value: state.value + action.payload}
+    case "increment":
+      return { ...state, value: state.value + 1 };
+    case "decrement":
+      return { ...state, value: state.value - 1 };
+    case "incrementByAmount":
+      return { ...state, value: state.value + action.payload };
     default:
-      return state
+      return state;
   }
 }
 
@@ -20,4 +20,4 @@ export const store = configureStore({
   reducer: {
     counter: counterReducer,
   },
-})
+});
