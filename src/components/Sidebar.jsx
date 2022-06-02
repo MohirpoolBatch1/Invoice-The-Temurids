@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import {Link} from "react-router-dom"
 import avatar from "../assets/image-avatar.jpg";
 
 const Sidebar = () => (
   <div className="sidebar w-[103px] flex flex-wrap content-between h-full rounded-r-3xl bg-[#373B53]">
     <div className="high__icon w-full h-[103px] bg-purple rounded-tr-3xl flex justify-center items-center">
-      <Link to={"/"}>
+      <Link to={'/'}>
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
           <path
             fill="#FFF"
