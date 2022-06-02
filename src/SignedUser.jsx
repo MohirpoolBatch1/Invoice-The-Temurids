@@ -1,5 +1,5 @@
-import React from "react";
-import Sidebar from "./components/Sidebar.jsx";
+import React from 'react'
+import Sidebar from './components/Sidebar.jsx'
 /* import Homepage from "./pages/Homepage/Homepage.jsx"; */
 
 const SignedUser = () => (
@@ -7,5 +7,5 @@ const SignedUser = () => (
     <Sidebar />
     {/*     <Routes>   <Route path="/" element={<Homepage />} /> </Routes> */}
   </div>
-);
-export default SignedUser;
+)
+export default SignedUser
