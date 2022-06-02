@@ -3,44 +3,29 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-<<<<<<< HEAD
-  extends: ["airbnb-base", "prettier"],
-  parser: "@babel/eslint-parser",
+  extends: ['airbnb-base', 'prettier'],
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: 'module',
     babelOptions: {
-      presets: ["@babel/preset-react"],
+      presets: ['@babel/preset-react'],
     },
     requireConfigFile: false,
   },
 
-  plugins: ["react", "import", "jsx-a11y", "prettier"],
+  plugins: ['react', 'import', 'jsx-a11y', 'prettier'],
   rules: {
-    "prettier/prettier": [
-      "warn",
+    'prettier/prettier': [
+      'warn',
       {
-        endOfLine: "auto",
+        endOfLine: 'auto',
       },
     ],
-    "no-unused-vars": "off",
-    "import/prefer-default-export": "off",
-    "no-param-reassign": "off",
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-    "default-param-last": "off",
-=======
-  parser: '@babel/eslint-parser',
-  extends: ['airbnb-base', 'prettier', 'eslint:recommended', 'react-app'],
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-  },
-  plugins: ['prettier'],
-  rules: {
-    'prettier/prettier': 'error',
+    'no-unused-vars': 'off',
     'import/prefer-default-export': 'off',
+    'no-param-reassign': 'off',
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
-    'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
->>>>>>> 4c31912747398a7695976373c98654ac77d3b290
+    'default-param-last': 'off',
   },
 }
