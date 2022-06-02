@@ -27,18 +27,5 @@ module.exports = {
     'no-param-reassign': 'off',
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
     'default-param-last': 'off',
-    parser: '@babel/eslint-parser',
-    extends: ['airbnb-base', 'prettier', 'eslint:recommended', 'react-app'],
-    parserOptions: {
-      ecmaVersion: 12,
-      sourceType: 'module',
-    },
-    plugins: ['prettier'],
-    rules: {
-      'prettier/prettier': 'error',
-      'import/prefer-default-export': 'off',
-      'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
-      'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
-    },
   },
 }
