@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
 =======
 <<<<<<< HEAD
@@ -26,6 +27,12 @@
 >>>>>>> 2e374f2 (add extensions)
 =======
 >>>>>>> 6a88af2 (IT-3 Sidebar)
+=======
+**Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
+=======
+**Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
+>>>>>>> 4c09991 (IT-3 Sidebar)
+>>>>>>> c9dc731 (IT-3 Sidebar)
 
 ## PR turi
 
