@@ -1,5 +1,4 @@
-**Issue #:**
-[JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
+**Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
 
 ## PR turi
 
@@ -47,6 +46,10 @@ Qo'shimcha ma'lumotlarni shu yerda qoldirishingiz mumkun
 PR quyidagilardan qaysi biriga to'g'ri kelsa, belgilab chiqing:
 
 - [ ] Bir necha qavatli prop-drilling ishlatilmayapti
-- [ ] Konsolda error va warning'lar tekshirildi, hech qanday error va warning yo'q
-- [ ] Har bir commit'da jira ticketining kodi belgilangan. Misol ucun `feat(SSP-10): mening commit xabarim`
-- [ ] Feature branch'ni master branch bilan up-to-date saqlash uchun rebase ishlatildi. Boshqacha qilib aytganda, PR raise qilishdan avval rebase qilingan
+- [ ] Konsolda error va warning'lar tekshirildi, hech qanday error va warning
+      yo'q
+- [ ] Har bir commit'da jira ticketining kodi belgilangan. Misol ucun
+      `feat(SSP-10): mening commit xabarim`
+- [ ] Feature branch'ni master branch bilan up-to-date saqlash uchun rebase
+      ishlatildi. Boshqacha qilib aytganda, PR raise qilishdan avval rebase
+      qilingan

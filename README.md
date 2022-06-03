@@ -8,9 +8,16 @@
 
 ## PR bilan ishlash
 
-Birinchi bosiqchda PR bilan ishlash ko'nikmasini o'zingizda [shakllantirdingiz](https://github.com/umarmuhandis/pomodoro#code-review-jarayoni-pr-qanday-qilib-raise-qilinadi). Jarayon bilan tanishsiz. Muammo yo'q degan umiddaman. Birinchi bosqichdan farqli o'laroq, bu bosqichda kodni faqat men review qilmayman. Real loyihalarni simulyatsiya qilish uchun bu bosqichda bir biringizning ham kodingizni review qilasiz.
+Birinchi bosiqchda PR bilan ishlash ko'nikmasini o'zingizda
+[shakllantirdingiz](https://github.com/umarmuhandis/pomodoro#code-review-jarayoni-pr-qanday-qilib-raise-qilinadi).
+Jarayon bilan tanishsiz. Muammo yo'q degan umiddaman. Birinchi bosqichdan farqli
+o'laroq, bu bosqichda kodni faqat men review qilmayman. Real loyihalarni
+simulyatsiya qilish uchun bu bosqichda bir biringizning ham kodingizni review
+qilasiz.
 
 ## Resurslar
 
-Figma design'ga [link](https://www.figma.com/file/0DUlDGlIU8kwl11IKpwcPi/invoice-app?node-id=0%3A1)
-Redux bilan [tanishish](https://redux.js.org/tutorials/fundamentals/part-1-overview)
+Figma design'ga
+[link](https://www.figma.com/file/0DUlDGlIU8kwl11IKpwcPi/invoice-app?node-id=0%3A1)
+Redux bilan
+[tanishish](https://redux.js.org/tutorials/fundamentals/part-1-overview)
