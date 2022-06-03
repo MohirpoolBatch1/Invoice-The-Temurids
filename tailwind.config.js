@@ -32,8 +32,6 @@ module.exports = {
         300: '#888EB0',
         200: '#DFE3FA',
         100: '#F8F8FB',
-        50: '#F2F2F2',
-        40: '#F9FAFE',
       },
     },
     fontSize: {
