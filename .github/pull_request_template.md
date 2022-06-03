@@ -14,11 +14,15 @@
 **Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
 =======
 =======
+<<<<<<< HEAD
 >>>>>>> 6a88af2 (IT-3 Sidebar)
 =======
 **Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
 =======
 >>>>>>> 6a88af2 (IT-3 Sidebar)
+=======
+>>>>>>> 721c19db5ae08945829414aa527070138e9552e1
+>>>>>>> edc3129dbdf3b1dad2e04c66c58a3a59d2fd0dfe
 **Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
 >>>>>>> 4c09991 (IT-3 Sidebar)
 =======
@@ -26,7 +30,22 @@
 >>>>>>> c595f4315b94e78767e5a3e41401781fd7184d39
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> edc3129dbdf3b1dad2e04c66c58a3a59d2fd0dfe
 >>>>>>> 6a88af2 (IT-3 Sidebar)
+=======
+**Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
+>>>>>>> 4c09991 (IT-3 Sidebar)
+>>>>>>> c9dc731 (IT-3 Sidebar)
+=======
+**Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
+>>>>>>> 2e374f2 (add extensions)
+=======
+<<<<<<< HEAD
+>>>>>>> 6a88af2 (IT-3 Sidebar)
+=======
+**Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
 =======
 **Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
 >>>>>>> 4c09991 (IT-3 Sidebar)
@@ -46,16 +65,8 @@
 **Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
 >>>>>>> 2e374f2 (add extensions)
 =======
->>>>>>> 6a88af2 (IT-3 Sidebar)
-=======
-**Issue #:** [JIRA-1234](https://mohirpool.atlassian.net/browse/IT-1234)
-=======
-**Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
->>>>>>> 4c09991 (IT-3 Sidebar)
->>>>>>> c9dc731 (IT-3 Sidebar)
-=======
-**Issue #:** [JIRA-1234](https://jira.thomsonreuters.com/browse/DUE-1234)
->>>>>>> 2e374f2 (add extensions)
+>>>>>>> 721c19db5ae08945829414aa527070138e9552e1
+>>>>>>> edc3129dbdf3b1dad2e04c66c58a3a59d2fd0dfe
 
 ## PR turi
 
