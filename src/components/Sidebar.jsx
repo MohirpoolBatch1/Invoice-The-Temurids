@@ -4,25 +4,17 @@ import avatar from '../assets/image-avatar.jpg'
 
 const Sidebar = () => (
   <div className="sidebar w-[103px] flex flex-wrap content-between h-full rounded-r-3xl bg-[#373B53]">
-    <Link to={'/'}>
-      <div className="high__icon w-full rounded-tr-3xl flex flex-col justify-center items-center">
-        <div className="relative flex flex-col justify-center items-center high__icon w-[103px] h-[103px] bg-purple rounded-tr-3xl rounded-br-3xl">
-          <div className="absolute top-[51px]  high__icon w-[103px] h-[52px] bg-purple-light rounded-tl-3xl rounded-br-3xl flex justify-center items-center"></div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="26"
-            className="z-10"
-          >
-            <path
-              fill="#FFF"
-              fill-rule="evenodd"
-              d="M20.513 0C24.965 2.309 28 6.91 28 12.21 28 19.826 21.732 26 14 26S0 19.826 0 12.21C0 6.91 3.035 2.309 7.487 0L14 12.9z"
-            />
-          </svg>
-        </div>
-      </div>
-    </Link>
+    <div className="high__icon w-full h-[103px] bg-purple rounded-tr-3xl flex justify-center items-center">
+      <Link to={'/'}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path
+            fill="#FFF"
+            fillRule="evenodd"
+            d="M20.513 0C24.965 2.309 28 6.91 28 12.21 28 19.826 21.732 26 14 26S0 19.826 0 12.21C0 6.91 3.035 2.309 7.487 0L14 12.9z"
+          />
+        </svg>
+      </Link>
+    </div>
     <div className="bottom_icon w-full flex-col flex rounded-br-3xl justify-center items-center">
       <div className="moon_icon mb-8">
         <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
