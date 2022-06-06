@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './components/Button.jsx'
 
 const SignedUser = () => (
   <div className="App font-spartan font-medium h-screen w-screen flex flex-col items-center justify-center bg-gray-100">
