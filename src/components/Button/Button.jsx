@@ -1,5 +1,5 @@
 import React from 'react'
-import * as types from './constant'
+import * as types from './constant.jsx'
 import plus from '../../assets/icon-plus.svg'
 
 function Button({buttonKind, onClick, className, type, children}) {
@@ -11,7 +11,7 @@ function Button({buttonKind, onClick, className, type, children}) {
     defaultChildren = types.del
   }
   if (buttonKind === types.editLight) {
-    btnClasses = `capitalize   text-gray-400 w-[4.5rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
+    btnClasses = `capitalize bg-[#F9FAFE] text-gray-400 w-[4.5rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
     defaultChildren = 'edit'
   }
   if (buttonKind === types.editDark) {
@@ -35,15 +35,15 @@ function Button({buttonKind, onClick, className, type, children}) {
     defaultChildren = 'Save as Draft'
   }
   if (buttonKind === types.addNewItem) {
-    btnClasses = `   text-gray-400 w-[21.875rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
+    btnClasses = `bg-[#F9FAFE] text-gray-400 w-[21.875rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
     defaultChildren = 'Add New Item'
   }
   if (buttonKind === types.cancel) {
-    btnClasses = `capitalize text-gray-400  w-[5.6rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
+    btnClasses = `bg-[#F9FAFE] capitalize text-gray-400  w-[5.6rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
     defaultChildren = types.cancel
   }
   if (buttonKind === types.discard) {
-    btnClasses = `capitalize text-gray-400 w-[5.6rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
+    btnClasses = `bg-[#F9FAFE] capitalize text-gray-400 w-[5.6rem] h-[3rem] rounded-[1.5rem] hover:bg-gray-200 `
     defaultChildren = types.discard
   }
   if (buttonKind === types.saveChanges) {
