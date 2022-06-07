@@ -1,7 +1,13 @@
+/* eslint-disable no-console */
 import React from 'react'
 import EmptyEmail from '../../assets/illustration-empty.svg'
+import Button from '../../components/Button/Button.jsx'
 
 function Homepage() {
+  // eslint-disable-next-line no-unused-vars
+  function ok() {
+    console.log('first')
+  }
   return (
     <div className="w-full h-full bg-white">
       <div className="header  flex justify-between mx-48  h-16 mt-12 items-center ">
@@ -16,7 +22,7 @@ function Homepage() {
           >
             <option value="Filter by status">Filter by status</option>
           </select>
-          <button type="button" className="bg-purple rounded-full  p-3 w-36 ">
+          {/* <button type="button" className="bg-purple rounded-full  p-3 w-36 ">
             <div className="flex items-center  ">
               <div className=" flex items-center justify-center  w-8 h-8 rounded-full mr-4 bg-white   ">
                 <span className="text-purple font-bold text-base mt-1  ">
@@ -25,8 +31,8 @@ function Homepage() {
               </div>
               <span className="text-body-1 text-white ">New Invoice</span>
             </div>
-          </button>
-          {/* <Button type="invoice"/> */}
+          </button> */}
+          <Button buttonKind="newInvoice" onClick={ok} />
         </div>
       </div>
 

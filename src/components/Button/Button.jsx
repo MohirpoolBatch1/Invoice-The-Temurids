@@ -1,8 +1,9 @@
+/* eslint-disable no-console */
 import React from 'react'
 import * as types from './constant'
 import plus from '../../assets/icon-plus.svg'
 
-function Button({buttonKind, className, type, children}) {
+function Button({buttonKind, onClick, className, type, children}) {
   let btnClasses
   let defaultChildren
 
@@ -56,6 +57,7 @@ function Button({buttonKind, className, type, children}) {
   }
   return (
     <button
+      onClick={onClick}
       type={type}
       className={`flex justify-around items-center font-bold text-xs ${btnClasses} ${className}`}
     >
