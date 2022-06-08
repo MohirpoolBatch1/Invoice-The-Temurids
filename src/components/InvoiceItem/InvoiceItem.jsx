@@ -23,7 +23,7 @@ export default function InvoiceItem({
   return (
     <Link to={`/invoice/${id}`}>
       <div className="flex bg-white w-[1100px] h-16 my-3 py-5 px-2 rounded-xl">
-        <span className="font-bold mx-4">{id}</span>
+        <span className="font-bold w-20 mx-4">{id}</span>
         <span className="text-gray-300 w-32 mx-4">{clientPaymentDue}</span>
         <span className="text-gray-300 w-32 mx-4">{clientName}</span>
         <span className="font-bold text-right text-xl w-24 mx-10">
