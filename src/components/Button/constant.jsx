@@ -1,12 +1,14 @@
-export const newInvoice = 'newInvoice'
-export const del = 'delete'
-export const editDark = 'editDark'
-export const markAsPaid = 'markAsPaid'
-export const saveAsDraftLight = 'saveAsDraftLight'
-export const saveAsDraftDark = 'saveAsDraftDark'
-export const saveChanges = 'saveChanges'
-export const saveSend = 'saveSend'
-export const editLight = 'editLight'
-export const cancel = 'cancel'
-export const discard = 'discard'
-export const addNewItem = 'addNewItem'
+export const types = {
+  newInvoice: 'newInvoice',
+  del: 'delete',
+  editDark: 'editDark',
+  markAsPaid: 'markAsPaid',
+  saveAsDraftLight: 'saveAsDraftLight',
+  saveAsDraftDark: 'saveAsDraftDark',
+  saveChanges: 'saveChanges',
+  saveSend: 'saveSend',
+  editLight: 'editLight',
+  cancel: 'cancel',
+  discard: 'discard',
+  addNewItem: 'addNewItem',
+}
