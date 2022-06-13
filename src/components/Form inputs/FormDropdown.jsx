@@ -1,13 +1,8 @@
 import React, {Fragment, useState} from 'react'
 import {Listbox, Transition} from '@headlessui/react'
-import arrowDown from '../../assets/icon-arrow-down.svg'
+import ArrowDown from '../../assets/icon-arrow-down.svg'
+import {netDays} from './Constants.jsx'
 
-const netDays = [
-  {day: 'Net 1 Day'},
-  {day: 'Net 7 Day'},
-  {day: 'Net 14 Day'},
-  {day: 'Net 30 Day'},
-]
 const FormDropdown = ({labelText}) => {
   const [selected, setSelected] = useState(netDays[0])
 
@@ -20,7 +15,7 @@ const FormDropdown = ({labelText}) => {
             <span className="block text-sm truncate text-gray-600 font-bold">
               {selected.day}
             </span>
-            <img src={arrowDown} alt="Options" className="cursor-pointer" />
+            <img src={ArrowDown} alt="Options" className="cursor-pointer" />
           </Listbox.Button>
           <Transition
             as={Fragment}
