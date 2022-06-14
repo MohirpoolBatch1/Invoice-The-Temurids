@@ -3,10 +3,14 @@ import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import datas from '../../data.json'
 import Button from '../../components/Button/Button.jsx'
+import {formatDate} from '../../utils/dateFormat/index'
+import {constantColors} from '../../components/InvoiceItem/constantColors'
 
 function InvoiceItemPage() {
   const {invoiceId} = useParams()
   const choiceInvoices = datas.find(d => d.id === invoiceId)
+  const choiceColorStatus = choiceInvoices.status
+  const [bgColor, textColor] = constantColors[choiceColorStatus]
   const {
     id,
     createdAt,
@@ -21,13 +25,6 @@ function InvoiceItemPage() {
     total,
   } = choiceInvoices
 
-  const createdAtUpp = convertData =>
-    `Due ${new Intl.DateTimeFormat('en-UK', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-    }).format(new Date(convertData))}`
-
   return (
     <div className="w-full h-full overflow-x-hidden	">
       <div className="ml-[15rem] mr-[17rem] mt-9">
@@ -37,19 +34,19 @@ function InvoiceItemPage() {
             <span className="mb-1 font-bold hover:text-gray-400">Go back</span>
           </button>
         </Link>
-        <div className="w-full h-[88px] flex items-center justify-between bg-white text-body-1 rounded-[8px] mt-3">
+        <div className="w-full h-[5.5] flex items-center justify-between bg-white text-body-1 rounded-[8px] py-3 mt-3">
           <div className="flex items-center text-xs">
             <span className="ml-8 text-gray-300 mb-1 font-medium">Status</span>
             <span
-              className="flex flex-col justify-center h-[40px] ml-5 rounded-[6px] font-bold text-[#FF8F00] bg-[#FFF9F0] p-5  
-    "
+              className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold bg-[${bgColor}] text-[${textColor}] py-3 px-5  
+    `}
             >
               <span className=" relative">
                 <span
-                  className="absolute w-2 h-2 top-[3px] bg-[#FF8F00]
-    rounded-full"
+                  className={`absolute w-2 h-2 top-[3px] bg-[${textColor}]
+    rounded-full`}
                 ></span>
-                <span className="capitalize ml-3 font-bold">{status}</span>
+                <span className={`capitalize ml-3 font-bold`}>{status}</span>
               </span>
             </span>
           </div>
@@ -62,10 +59,10 @@ function InvoiceItemPage() {
         <div className="w-full flex flex-col justify-between bg-white text-body-1 rounded-[8px] mt-3 p-10">
           <div className="flex w-full justify-between">
             <div className="flex flex-col">
-              <b className="text-base">
+              <h3>
                 <span className="text-gray-400">#</span>
                 {id}
-              </b>
+              </h3>
               <p className="text-gray-400 py-2">{description}</p>
             </div>
             <div className="flex flex-col">
@@ -90,14 +87,14 @@ function InvoiceItemPage() {
                   invoice date
                 </span>
                 <br />
-                <b className="text-base">{createdAtUpp(createdAt)}</b>
+                <b className="text-base">{formatDate(createdAt)}</b>
               </span>
               <span className="py-3">
                 <span className="capitalize text-gray-400 p-[2px]">
                   payment due
                 </span>
                 <br />
-                <b className="text-base">{createdAtUpp(paymentDue)}</b>
+                <b className="text-base">{formatDate(paymentDue)}</b>
               </span>
             </div>
             <div className="flex flex-col pb-2">
@@ -121,40 +118,63 @@ function InvoiceItemPage() {
               <b className="text-base">{clientEmail}</b>
             </div>
           </div>
-          <div className="flex justify-between bg-[#F9FAFE] rounded-t-lg mx-3 mt-3 p-6">
-            <div className="flex flex-col w-2/5">
-              <span className="capitalize text-gray-400 my-3 ">item name</span>
-              {items.map(item => (
-                <b className="text-xs my-3">{item.name}</b>
-              ))}
-            </div>
-            <div className="flex justify-evenly w-3/5">
-              <div className="flex flex-col items-center w-1/2">
-                <span className="uppercase text-gray-400 my-3">qity</span>
-                {items.map(item => (
-                  <span className="text-gray-400 my-3">{item.quantity}</span>
-                ))}
-              </div>
-              <div className="flex flex-col items-center w-1/2">
-                <span className="capitalize text-gray-400 my-3">price</span>
-                {items.map(item => (
-                  <span className="capitalize text-gray-400 my-3">
-                    {item.price}.00
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-between bg-[#F9FAFE] rounded-t-lg mx-3 mt-3 p-6">
+            <div className="flex justify-between">
+              <span className="capitalize text-gray-400 my-3">item name</span>
+              <div className="flex justify-between w-1/2">
+                <span className="uppercase text-gray-400 my-3 ml-3">qity</span>
+                <span className="capitalize text-gray-400 my-3 mr-[0.6rem]">
+                  price
+                </span>
                 <span className="capitalize text-gray-400 my-3">total</span>
-                {items.map(item => (
-                  <span className="font-bold my-3">{item.total}.00</span>
-                ))}
               </div>
             </div>
+            <div className="flex justify-between">
+              <div>
+                <strong className="flex text-xs my-3">{items[0].name}</strong>
+              </div>
+              <div className="flex justify-between w-1/2">
+                <span className="text-gray-400 my-3 ml-6">
+                  {items[0].quantity}
+                </span>
+                <span className="capitalize text-gray-400 my-3">
+                  <span className="mr-1">£</span>
+                  {items[0].price}.00
+                </span>
+                <span className="font-bold my-3">
+                  <span className="mr-1">£</span>
+                  {items[0].total}.00
+                </span>
+              </div>
+            </div>
+            {items[1] && (
+              <div className="flex justify-between">
+                <strong className="flex text-xs my-3">{items[1].name}</strong>
+
+                <div className="flex justify-between w-1/2">
+                  <span className="text-gray-400 my-3 ml-6">
+                    {items[1].quantity}
+                  </span>
+
+                  <span className="capitalize text-gray-400 my-3">
+                    <span className="mr-1">£</span>
+                    {items[1].price}.00
+                  </span>
+                  <span className="font-bold my-3">
+                    <span className="mr-1">£</span>
+                    {items[1].total}.00
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
-          <div className="flex justify-between bg-[#373B53] rounded-b-lg mx-3 mb-3 p-6 text-white">
-            <span className="font-medium text-xs">Amount Due</span>
-            <span className="font-bold text-[1.5rem]">£{total}.00</span>
-          </div>
+        </div>
+        <div className="flex justify-between bg-[#373B53] rounded-b-lg mx-3 mb-3 p-6 text-white">
+          <span className="font-medium text-xs">Amount Due</span>
+          <span className="font-bold text-[1.5rem]">
+            <span className="mr-1">£</span>
+            {total}.00
+          </span>
         </div>
       </div>
     </div>
