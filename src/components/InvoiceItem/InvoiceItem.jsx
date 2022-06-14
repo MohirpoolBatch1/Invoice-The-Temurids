@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
 import {constantColors} from './constantColors'
+import rightArrow from '../../assets/icon-arrow-right.svg'
 
 export default function InvoiceItem({
   id,
@@ -18,28 +19,29 @@ export default function InvoiceItem({
     style: 'currency',
     currency: 'GBP',
   }).format(total)
-  const [bgColor, textColor, dotBgColor] =
-    constantColors[status.replace(/"/g, '')]
+  const [bgColor, textColor] = constantColors[status]
   return (
     <Link to={`/invoice/${id}`}>
-      <div className="flex bg-white w-[1100px] h-16 my-3 py-5 px-2 rounded-xl">
-        <span className="font-bold w-20 mx-4">{id}</span>
-        <span className="text-gray-300 w-32 mx-4">{clientPaymentDue}</span>
-        <span className="text-gray-300 w-32 mx-4">{clientName}</span>
-        <span className="font-bold text-right text-xl w-24 mx-10">
+      <div className="flex items-center bg-white w-[43rem] h-12 my-1 py-4 text-lg rounded-xl">
+        <span className="font-bold w-12 mx-6">{id}</span>
+        <span className="text-gray-300 w-24 mx-6">{clientPaymentDue}</span>
+        <span className="text-gray-300 w-24 mx-6">{clientName}</span>
+        <span className="font-bold text-right text-xl w-24 mx-11">
           {clientTotalExpanse}
         </span>
         <span
-          className={`${bgColor} ${textColor} flex -mt-2  w-28 h-10 font-bold rounded-lg`}
+          className={`bg-[${bgColor}] text-[${textColor}] flex w-24 h-8 font-bold rounded-lg`}
         >
           <div className="flex m-auto">
             <div
-              className={`h-2 w-2 ${dotBgColor} mt-2 mr-2 p-0.5 rounded-full`}
+              className={`h-2 w-2 bg-[${textColor}] mt-1 mr-2 p-0.5 rounded-full`}
             ></div>{' '}
             {clientStatus}
           </div>
         </span>
-        <span className="text-purple font-bold mx-4">&gt;</span>
+        <span className=" text-purple font-bold mx-3 pr-2">
+          <img src={rightArrow} alt="Right arrow" />
+        </span>
       </div>
     </Link>
   )
