@@ -3,12 +3,13 @@ import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import datas from '../../data.json'
 import Button from '../../components/Button/Button.jsx'
-import {formatDate} from '../../utils/dateFormat/index'
+import {formatDate} from '../../utils/index'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
+import ItemRow from './ItemRow.jsx'
 
 function InvoiceItemPage() {
   const {invoiceId} = useParams()
-  const choiceInvoices = datas.find(d => d.id === invoiceId)
+  const choiceInvoices = datas.find(d => d.id === 'RT3080')
   const choiceColorStatus = choiceInvoices.status
   const [bgColor, textColor] = constantColors[choiceColorStatus]
   const {
@@ -26,7 +27,7 @@ function InvoiceItemPage() {
   } = choiceInvoices
 
   return (
-    <div className="w-full h-full overflow-x-hidden	">
+    <div className="w-full h-full overflow-x-hidden">
       <div className="ml-[15rem] mr-[17rem] mt-9">
         <Link to="/">
           <button className="flex flex-row items-center justify-between">
@@ -129,44 +130,7 @@ function InvoiceItemPage() {
                 <span className="capitalize text-gray-400 my-3">total</span>
               </div>
             </div>
-            <div className="flex justify-between">
-              <div>
-                <strong className="flex text-xs my-3">{items[0].name}</strong>
-              </div>
-              <div className="flex justify-between w-1/2">
-                <span className="text-gray-400 my-3 ml-6">
-                  {items[0].quantity}
-                </span>
-                <span className="capitalize text-gray-400 my-3">
-                  <span className="mr-1">£</span>
-                  {items[0].price}.00
-                </span>
-                <span className="font-bold my-3">
-                  <span className="mr-1">£</span>
-                  {items[0].total}.00
-                </span>
-              </div>
-            </div>
-            {items[1] && (
-              <div className="flex justify-between">
-                <strong className="flex text-xs my-3">{items[1].name}</strong>
-
-                <div className="flex justify-between w-1/2">
-                  <span className="text-gray-400 my-3 ml-6">
-                    {items[1].quantity}
-                  </span>
-
-                  <span className="capitalize text-gray-400 my-3">
-                    <span className="mr-1">£</span>
-                    {items[1].price}.00
-                  </span>
-                  <span className="font-bold my-3">
-                    <span className="mr-1">£</span>
-                    {items[1].total}.00
-                  </span>
-                </div>
-              </div>
-            )}
+            <ItemRow items={items} />
           </div>
         </div>
         <div className="flex justify-between bg-[#373B53] rounded-b-lg mx-3 mb-3 p-6 text-white">
