@@ -9,7 +9,7 @@ import ItemRow from './ItemRow.jsx'
 
 function InvoiceItemPage() {
   const {invoiceId} = useParams()
-  const choiceInvoices = datas.find(d => d.id === 'RT3080')
+  const choiceInvoices = datas.find(d => d.id === invoiceId)
   const choiceColorStatus = choiceInvoices.status
   const [bgColor, textColor] = constantColors[choiceColorStatus]
   const {
@@ -119,7 +119,7 @@ function InvoiceItemPage() {
               <b className="text-base">{clientEmail}</b>
             </div>
           </div>
-          <div className="flex flex-col justify-between bg-[#F9FAFE] rounded-t-lg mx-3 mt-3 p-6">
+          <div className="flex flex-col justify-between bg-[#F9FAFE] rounded-t-lg mt-3 p-6">
             <div className="flex justify-between">
               <span className="capitalize text-gray-400 my-3">item name</span>
               <div className="flex justify-between w-1/2">
@@ -130,7 +130,7 @@ function InvoiceItemPage() {
                 <span className="capitalize text-gray-400 my-3">total</span>
               </div>
             </div>
-            <ItemRow items={items} />
+            <ItemRow itemData={items} />
           </div>
         </div>
         <div className="flex justify-between bg-[#373B53] rounded-b-lg mx-3 mb-3 p-6 text-white">
