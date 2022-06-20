@@ -6,7 +6,6 @@ import InvoiceItem from '../../components/InvoiceItem/InvoiceItem.jsx'
 import EmptyEmail from '../../assets/illustration-empty.svg'
 import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
-import MenuItem from './MenuItem.jsx'
 
 function Homepage() {
   const [data, setData] = useState(datas)
