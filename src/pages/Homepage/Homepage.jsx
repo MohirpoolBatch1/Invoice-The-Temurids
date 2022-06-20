@@ -88,7 +88,11 @@ function Homepage() {
       {/* main part */}
 
       {data.length > 0 ? (
-        data.map(invoice => <InvoiceItem key={invoice.id} {...invoice} />)
+        <div className=" flex flex-col items-center justify-center">
+          {data.map(invoice => (
+            <InvoiceItem key={invoice.id} {...invoice} />
+          ))}
+        </div>
       ) : (
         <div className="m-auto w-72  my-10 flex flex-col items-center">
           <img src={EmptyEmail} alt="" />
