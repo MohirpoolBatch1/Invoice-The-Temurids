@@ -3,10 +3,14 @@ import {Routes, Route} from 'react-router-dom'
 import Sidebar from './components/Sidebar.jsx'
 import Homepage from './pages/Homepage/Homepage.jsx'
 import NotFound from './pages/NotFoud/NotFound.jsx'
+import FormWindow from './components/FormWindow/FormWindow.jsx'
+import Overlay from './components/FormWindow/Overlay.jsx'
 
 const SignedUser = () => (
-  <div className="App font-spartan font-medium h-screen w-screen flex bg-gray-100">
+  <div className="App relative font-spartan font-medium h-screen w-screen flex bg-gray-100">
     <InvoiceRoutes />
+    <FormWindow />
+    <Overlay />
   </div>
 )
 
