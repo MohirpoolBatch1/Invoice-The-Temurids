@@ -1,5 +1,5 @@
 export const formatDate = convertData =>
-  `Due ${new Intl.DateTimeFormat('en-UK', {
+  `${new Intl.DateTimeFormat('en-UK', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',

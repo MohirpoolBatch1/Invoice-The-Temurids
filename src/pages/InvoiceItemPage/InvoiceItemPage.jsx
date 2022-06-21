@@ -11,7 +11,7 @@ function InvoiceItemPage() {
   const {invoiceId} = useParams()
   const choiceInvoices = datas.find(d => d.id === invoiceId)
   const choiceColorStatus = choiceInvoices.status
-  const [bgColor, textColor] = constantColors[choiceColorStatus]
+  const [bgColor, textColor, dotColor] = constantColors[choiceColorStatus]
   const {
     id,
     createdAt,
@@ -28,7 +28,7 @@ function InvoiceItemPage() {
 
   return (
     <div className="w-full h-full overflow-x-hidden">
-      <div className="ml-[15rem] mr-[17rem] mt-9">
+      <div className="ml-[15rem] mr-[17rem] my-9">
         <Link to="/">
           <button className="flex flex-row items-center justify-between">
             <img className="mr-5" src={arrowLeft} alt="left" />
@@ -39,15 +39,15 @@ function InvoiceItemPage() {
           <div className="flex items-center text-xs">
             <span className="ml-8 text-gray-300 mb-1 font-medium">Status</span>
             <span
-              className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold bg-[${bgColor}] text-[${textColor}] py-3 px-5  
+              className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold ${bgColor} ${textColor} py-3 px-5  
     `}
             >
               <span className=" relative">
                 <span
-                  className={`absolute w-2 h-2 top-[3px] bg-[${textColor}]
+                  className={`absolute w-2 h-2 top-[3px] ${dotColor}
     rounded-full`}
                 ></span>
-                <span className={`capitalize ml-3 font-bold`}>{status}</span>
+                <span className="capitalize ml-3 font-bold">{status}</span>
               </span>
             </span>
           </div>
@@ -132,13 +132,13 @@ function InvoiceItemPage() {
             </div>
             <ItemRow itemData={items} />
           </div>
-        </div>
-        <div className="flex justify-between bg-[#373B53] rounded-b-lg mx-3 mb-3 p-6 text-white">
-          <span className="font-medium text-xs">Amount Due</span>
-          <span className="font-bold text-[1.5rem]">
-            <span className="mr-1">£</span>
-            {total}.00
-          </span>
+          <div className="flex justify-between bg-[#373B53] rounded-b-lg mb-1 p-6 text-white">
+            <span className="font-medium text-xs">Amount Due</span>
+            <span className="font-bold text-[1.5rem]">
+              <span className="mr-1">£</span>
+              {total}.00
+            </span>
+          </div>
         </div>
       </div>
     </div>
