@@ -22,8 +22,8 @@ function Homepage() {
   }
 
   return (
-    <div className="w-full h-full overflow-y-scroll ">
-      <div className="header  flex justify-between mx-48  h-16 mt-12  items-center mb-16">
+    <div className="w-full h-full overflow-y-scroll px-60 ">
+      <div className="  flex justify-between   h-16 mt-12  items-center mb-16 ">
         <div className=" flex flex-col  ">
           <h1 className="text-gray-600 font-bold  ">Invoices</h1>
           <p className="text-body-1 text-gray-300 font-normal ">
@@ -90,7 +90,7 @@ function Homepage() {
       {data.length > 0 ? (
         data.map(invoice => <InvoiceItem key={invoice.id} {...invoice} />)
       ) : (
-        <div className="m-auto w-72  my-10 flex flex-col items-center  ">
+        <div className="m-auto w-72  my-10 flex flex-col items-center   ">
           <img src={EmptyEmail} alt="" />
           <h2 className="text-gray-600 font-bold mt-6">
             There is nothing here
