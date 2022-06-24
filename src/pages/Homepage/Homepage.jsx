@@ -90,7 +90,7 @@ function Homepage() {
       {data.length > 0 ? (
         data.map(invoice => <InvoiceItem key={invoice.id} {...invoice} />)
       ) : (
-        <div className="m-auto w-72  my-10 flex flex-col items-center   ">
+        <div className="m-auto w-72  my-10 flex flex-col items-center  ">
           <img src={EmptyEmail} alt="" />
           <h2 className="text-gray-600 font-bold mt-6">
             There is nothing here
@@ -103,6 +103,7 @@ function Homepage() {
           </p>
         </div>
       )}
+
     </div>
   )
 }
