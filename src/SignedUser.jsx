@@ -8,7 +8,7 @@ import {bgColor} from './constants'
 
 const SignedUser = () => (
   <div
-    className={`App font-spartan font-medium h-screen w-screen flex  bg-[${bgColor}] `}
+    className={`App font-spartan font-medium h-screen w-screen flex  bg-[${bgColor}]`}
   >
     <InvoiceRoutes />
   </div>
