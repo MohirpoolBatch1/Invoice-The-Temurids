@@ -6,15 +6,9 @@ import Button from '../../components/Button/Button.jsx'
 import {formatDate} from '../../utils/index'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
-import {useInvoiceDeleteMutation} from '../../services/invoiceDeleteApi'
 import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
 
 function InvoiceItemPage() {
-  const [deleteInvoice] = useInvoiceDeleteMutation()
-  const handleDel = id => {
-    deleteInvoice(id)
-    toggleModal()
-  }
   const [isOpen, setIsOpen] = useState(false)
   function toggleModal() {
     setIsOpen(!isOpen)
@@ -67,7 +61,7 @@ function InvoiceItemPage() {
             <Button buttonKind={'editLight'} className="mr-2" />
             <Button
               buttonKind={'delete'}
-              onClick={() => handleDel(id)}
+              onClick={() => toggleModal()}
               className="mr-2"
             />
             <Button buttonKind={'markAsPaid'} className="mr-6" />
@@ -157,9 +151,8 @@ function InvoiceItemPage() {
           </div>
         </div>
       </div>
-      {/* <div className="bg-[#F2F2F2] w-full h-full relative z-50 top-0 left-0 bottom-0 right-0"></div> */}
       <div
-        class={`${
+        className={`${
           isOpen ? 'block' : 'hidden'
         } overlay w-skreen h-screen bg-gray-800 opacity-20 absolute top-0 bottom-0 right-0 left-0 transition cursor-pointer`}
         id="overlay"

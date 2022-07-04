@@ -2,17 +2,18 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import Modal from 'react-modal'
 import Button from '../../components/Button/Button.jsx'
+import {useInvoiceDeleteMutation} from '../../services/invoiceDeleteApi'
 
 export default function ModalDeleteInvoice({isOpen, id, toggleModal}) {
   const navigate = useNavigate()
-
-  const handleDelete = () => {
+  const [deleteInvoice] = useInvoiceDeleteMutation()
+  const handleDelete = x => {
+    deleteInvoice(x)
     navigate('../')
   }
   return (
     <Modal
       className="bg-[#FFFFFF] w-2/6 mt-[17%] ml-[36%] mr-[-50%] rounded-[8px] p-4"
-      // style={customStyles}
       isOpen={isOpen}
       onRequestClose={toggleModal}
       contentLabel="My dialog"
@@ -25,7 +26,11 @@ export default function ModalDeleteInvoice({isOpen, id, toggleModal}) {
         </p>
         <div className="flex mb-3 mt-7 mr-5 justify-end">
           <Button buttonKind={'cancel'} onClick={toggleModal}></Button>
-          <Button buttonKind={'delete'} onClick={handleDelete} className="ml-2">
+          <Button
+            buttonKind={'delete'}
+            onClick={() => handleDelete(id)}
+            className="ml-2"
+          >
             delete
           </Button>
         </div>
