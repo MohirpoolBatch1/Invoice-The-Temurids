@@ -23,8 +23,8 @@ function Homepage() {
 
   return (
     <div className="w-full h-full overflow-y-scroll px-60">
-      <div className="  flex justify-between   h-16 mt-12  items-center mb-16">
-        <div className=" flex flex-col">
+      <div className="flex justify-between   h-16 mt-12  items-center mb-16">
+        <div className="flex flex-col">
           <h1 className="text-gray-600 font-bold">Invoices</h1>
           <p className="text-body-1 text-gray-300 font-normal">
             {data.length > 0
