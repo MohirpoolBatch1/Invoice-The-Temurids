@@ -4,9 +4,12 @@ import Sidebar from './components/Sidebar.jsx'
 import Homepage from './pages/Homepage/Homepage.jsx'
 import NotFound from './pages/NotFoud/NotFound.jsx'
 import InvoiceItemPage from './pages/InvoiceItemPage/InvoiceItemPage.jsx'
+import {bgColor} from './constants'
 
 const SignedUser = () => (
-  <div className="App font-spartan font-medium h-screen w-screen flex bg-gray-100">
+  <div
+    className={`App font-spartan font-medium h-screen w-screen flex  bg-[${bgColor}]`}
+  >
     <InvoiceRoutes />
   </div>
 )
