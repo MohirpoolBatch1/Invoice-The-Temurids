@@ -1,10 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit'
-import {invoiceDeleteApi} from '../services/invoiceDeleteApi'
+import {invoiceApi} from '../services/invoiceApi'
 
 export const store = configureStore({
   reducer: {
-    [invoiceDeleteApi.reducerPath]: invoiceDeleteApi.reducer,
+    [invoiceApi.reducerPath]: invoiceApi.reducer,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(invoiceDeleteApi.middleware),
+    getDefaultMiddleware().concat(invoiceApi.middleware),
 })

@@ -30,7 +30,7 @@ export default function ItemRow({itemData}) {
               {itemData[1].quantity}
             </span>
 
-            <span className="capitalize text-gray-400 my-3">
+            <span className="capitalize text-gray-400 my-3 mr-1">
               <span className="mr-1">£</span>
               {itemData[1].price}.00
             </span>
