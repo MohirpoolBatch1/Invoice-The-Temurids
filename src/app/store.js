@@ -1,23 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit'
-
-// TODO: Default reducer yozilgan, bunga hozircha tegmay turing.
-const initialState = {value: 0}
-
-function counterReducer(state = initialState, action = {}) {
-  switch (action.type) {
-    case 'increment':
-      return {...state, value: state.value + 1}
-    case 'decrement':
-      return {...state, value: state.value - 1}
-    case 'incrementByAmount':
-      return {...state, value: state.value + action.payload}
-    default:
-      return state
-  }
-}
+import {invoiceDeleteApi} from '../services/invoiceDeleteApi'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    [invoiceDeleteApi.reducerPath]: invoiceDeleteApi.reducer,
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware().concat(invoiceDeleteApi.middleware),
 })
