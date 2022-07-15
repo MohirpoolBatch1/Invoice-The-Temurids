@@ -7,9 +7,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
-      mobile: '375px',
-      tablet: '768px',
-      desktop: '1440px',
+      mobile: '23.4rem',
+      tablet: '48rem',
+      desktop: '90rem',
     },
     colors: {
       current: 'currentColor',
@@ -35,24 +35,24 @@ module.exports = {
       },
     },
     fontSize: {
-      'body-1': ['12px', {lineHeight: '15px', letterSpacing: '-0.25px'}],
-      'body-2': ['11px', {lineHeight: '18px', letterSpacing: '-0.23px'}],
+      'body-1': ['0.75rem', {lineHeight: '0.94rem', letterSpacing: '-0.25px'}],
+      'body-2': ['0.7rem', {lineHeight: '1.125rem', letterSpacing: '-0.23px'}],
       xs: [
-        '12px',
+        '0.75rem',
         {
-          lineHeight: '15px',
+          lineHeight: '0.94rem',
           letterSpacing: '-0.25px',
         },
       ],
       base: [
-        '16px',
+        '1rem',
         {
-          lineHeight: '24px',
+          lineHeight: '1.5rem',
           letterSpacing: '-0.8px',
         },
       ],
-      lg: ['20px', {lineHeight: '22px', letterSpacing: '-0.63px'}],
-      xl: ['32px', {lineHeight: '36px', letterSpacing: '-1px'}],
+      lg: ['1.25rem', {lineHeight: '1.375rem', letterSpacing: '-0.63px'}],
+      xl: ['2rem', {lineHeight: '2.25rem', letterSpacing: '1px'}],
     },
     extend: {},
   },
