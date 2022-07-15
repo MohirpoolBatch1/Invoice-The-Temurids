@@ -19,7 +19,7 @@ function Homepage() {
   const [datas, setDatas] = useState([])
   const statusId = useId()
   const [showStatus, setShowStatus] = useState(false)
-  const allStatus = ['draft', 'pending', 'paid']
+  const allStatus = Object.keys(statusCheck)
   const chosenStatus = allStatus.filter(item => statusCheck[item])
   const handleChange = e => {
     setStatusCheck({
@@ -38,7 +38,7 @@ function Homepage() {
     }
     const filtered = data?.filter(item => statusCheck[item.status])
     setDatas(filtered)
-  }, [statusCheck])
+  }, [data, statusCheck])
 
   return (
     <div className="w-full h-full overflow-y-scroll px-60 ">
