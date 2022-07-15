@@ -27,7 +27,7 @@ function InvoiceItemPage() {
     items,
     total,
   } = data
-  const [bgColor, textColor, dotColor] = constantColors[status]
+  const [bgColor, textColor, dotColor] = status && constantColors[status]
   return (
     <div className="w-full h-full overflow-x-hidden">
       {isLoading && <div>Loading</div>}
