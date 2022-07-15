@@ -2,19 +2,16 @@ import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import datas from '../../data.json'
+import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
 import Button from '../../components/Button/Button.jsx'
 import {formatDate} from '../../utils/index'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
-import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
 
 function InvoiceItemPage() {
-  const handleDel = id => {
-    toggleModal()
-  }
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
   function toggleModal() {
-    setIsOpen(!isOpen)
+    setIsOpenModal(!isOpenModal)
   }
 
   const {invoiceId} = useParams()
@@ -64,7 +61,7 @@ function InvoiceItemPage() {
             <Button buttonKind={'editLight'} className="mr-2" />
             <Button
               buttonKind={'delete'}
-              onClick={() => handleDel(id)}
+              onClick={() => setIsOpenModal(!isOpenModal)}
               className="mr-2"
             />
             <Button buttonKind={'markAsPaid'} className="mr-6" />
@@ -154,13 +151,11 @@ function InvoiceItemPage() {
           </div>
         </div>
       </div>
-      <div
-        class={`${
-          isOpen ? 'block' : 'hidden'
-        } overlay w-skreen h-screen bg-gray-800 opacity-20 absolute top-0 bottom-0 right-0 left-0 transition cursor-pointer`}
-        id="overlay"
-      ></div>
-      <ModalDeleteInvoice isOpen={isOpen} id={id} toggleModal={toggleModal} />
+      <ModalDeleteInvoice
+        isOpenModal={isOpenModal}
+        id={id}
+        toggleModal={toggleModal}
+      />
     </div>
   )
 }
