@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import Button from '../../components/Button/Button.jsx'
@@ -6,8 +6,10 @@ import {formatDate} from '../../utils/index'
 import {useInvoiceItemDetailsQuery} from '../../services/invoiceApi'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
+import FormWindow from '../../components/FormWindow/FormWindow.jsx'
 
 function InvoiceItemPage() {
+  const [openWindow, setOpenWindow] = useState(false)
   const {invoiceId} = useParams()
   const {
     data = {},

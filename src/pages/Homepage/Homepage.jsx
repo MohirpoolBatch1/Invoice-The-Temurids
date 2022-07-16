@@ -6,6 +6,7 @@ import EmptyEmail from '../../assets/illustration-empty.svg'
 import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
 import {useInvoicesQuery} from '../../services/invoiceApi'
+import FormWindow from '../../components/FormWindow/FormWindow.jsx'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
@@ -99,7 +100,7 @@ function Homepage() {
             </Transition>
           </Menu>
 
-          <Button buttonKind="newInvoice" onClick={() => {}} type="button">
+          <Button buttonKind="newInvoice" type="button">
             New Invoice
           </Button>
         </div>

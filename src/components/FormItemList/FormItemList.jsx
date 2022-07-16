@@ -17,7 +17,7 @@ function FormItemsRow({id, itemName, qty, price, total}) {
   }
 
   return (
-    <div id={id} className="flex mt-4 space-between ml-4">
+    <div id={id} className="flex mt-4 space-between">
       <input
         placeholder="Item name"
         name={itemName}
@@ -49,7 +49,7 @@ function FormItemsRow({id, itemName, qty, price, total}) {
       >
         {total}
       </div>
-      <button className="h-4 ml-9 mt-7">
+      <button>
         <img src={DeleteIcon} alt="logo" />
       </button>
     </div>
