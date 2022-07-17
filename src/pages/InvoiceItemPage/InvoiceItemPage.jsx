@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import datas from '../../data.json'
@@ -6,8 +6,11 @@ import Button from '../../components/Button/Button.jsx'
 import {formatDate} from '../../utils/index'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
+import FormWindow from '../../components/FormWindow/FormWindow.jsx'
+import Overlay from '../../components/FormWindow/Overlay.jsx'
 
 function InvoiceItemPage() {
+  const [openWindow, setOpenWindow] = useState(false)
   const {invoiceId} = useParams()
   const choiceInvoices = datas.find(d => d.id === invoiceId)
   const choiceColorStatus = choiceInvoices.status
@@ -28,6 +31,18 @@ function InvoiceItemPage() {
 
   return (
     <div className="w-full h-full overflow-x-hidden">
+      {openWindow ? (
+        <>
+          <FormWindow
+            setOpenWindow={setOpenWindow}
+            kindModal={'edit'}
+            id={id}
+          />
+          <Overlay />
+        </>
+      ) : (
+        ''
+      )}
       <div className="ml-[15rem] mr-[17rem] my-9">
         <Link to="/">
           <button className="flex flex-row items-center justify-between">
@@ -52,7 +67,11 @@ function InvoiceItemPage() {
             </span>
           </div>
           <div className="flex justify-around">
-            <Button buttonKind={'editLight'} className="mr-2" />
+            <Button
+              onClick={setOpenWindow}
+              buttonKind={'editLight'}
+              className="mr-2"
+            />
             <Button buttonKind={'delete'} className="mr-2" />
             <Button buttonKind={'markAsPaid'} className="mr-6" />
           </div>

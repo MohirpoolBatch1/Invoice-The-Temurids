@@ -3,17 +3,17 @@ import {Listbox, Transition} from '@headlessui/react'
 import ArrowDown from '../../assets/icon-arrow-down.svg'
 import {netDays} from './Constants.jsx'
 
-const FormDropdown = ({labelText}) => {
+const FormDropdown = ({labelText, className}) => {
   const [selected, setSelected] = useState(netDays[0])
 
   return (
-    <div className="flex-grow w-full relative sm:mb-0">
+    <div className={`flex-grow w-full relative sm:mb-0 ${className}`}>
       <label className="text-xs text-gray-400">{labelText}</label>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default rounded-lg  border border-gray-200 bg-white p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center">
+          <Listbox.Button className="relative w-full cursor-default border border-gray-200 bg-white p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center">
             <span className="block text-sm truncate text-gray-600 font-bold">
-              {selected.day}
+              {selected}
             </span>
             <img src={ArrowDown} alt="Options" className="cursor-pointer" />
           </Listbox.Button>
@@ -35,7 +35,7 @@ const FormDropdown = ({labelText}) => {
                   }
                   value={days}
                 >
-                  <span className="block truncate font-medium">{days.day}</span>
+                  <span className="block truncate font-medium">{days}</span>
                 </Listbox.Option>
               ))}
             </Listbox.Options>
