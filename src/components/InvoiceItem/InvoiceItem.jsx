@@ -20,7 +20,6 @@ export default function InvoiceItem({
     currency: 'GBP',
   }).format(total)
   const [bgColor, textColor, dotColor] = constantColors[status]
-
   return (
     <Link className="w-full" to={`/invoice/${id}`}>
       <div className="flex justify-between items-center bg-white h-16  mb-4 px-8 text-lg rounded-xl ">
