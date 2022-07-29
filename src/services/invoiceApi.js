@@ -34,8 +34,8 @@ export const invoiceApi = createApi({
       invalidatesTags: ['Invoice'],
     }),
     deleteInvoice: builder.mutation({
-      query: id => ({
-        url: `/invoice/${id}`,
+      query: invoiceId => ({
+        url: `/invoice/${invoiceId}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Invoice'],

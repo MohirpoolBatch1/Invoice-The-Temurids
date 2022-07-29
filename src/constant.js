@@ -1,1 +1,1 @@
-export const baseUrl = 'https://serene-plains-38345.herokuapp.com'
+export const bgColor = '#F2F2F2'

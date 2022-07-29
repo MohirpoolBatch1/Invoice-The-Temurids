@@ -4,7 +4,7 @@ import Sidebar from './components/Sidebar.jsx'
 import Homepage from './pages/Homepage/Homepage.jsx'
 import NotFound from './pages/NotFoud/NotFound.jsx'
 import InvoiceItemPage from './pages/InvoiceItemPage/InvoiceItemPage.jsx'
-import {bgColor} from './constants'
+import {bgColor} from './constant'
 
 const SignedUser = () => (
   <div

@@ -2,7 +2,7 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import Modal from 'react-modal'
 import Button from '../../components/Button/Button.jsx'
-import {useDeleteInvoiceMutation} from '../../services/invoiceDeleteApi'
+import {useDeleteInvoiceMutation} from '../../services/invoiceApi'
 
 export default function ModalDeleteInvoice({isOpenModal, id, toggleModal}) {
   const navigate = useNavigate()
