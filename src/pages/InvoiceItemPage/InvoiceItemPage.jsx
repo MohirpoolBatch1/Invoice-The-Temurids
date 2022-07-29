@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import arrowLeft from '../../assets/icon-arrow-left.svg'
 import Button from '../../components/Button/Button.jsx'
@@ -6,8 +6,13 @@ import {formatDate} from '../../utils/index'
 import {useInvoiceItemDetailsQuery} from '../../services/invoiceApi'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
+import ModalDeleteInvoice from './ModalDeleteInvoice'
 
 function InvoiceItemPage() {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  function toggleModal() {
+    setIsOpenModal(!isOpenModal)
+  }
   const {invoiceId} = useParams()
   const {
     data = {},
@@ -152,6 +157,11 @@ function InvoiceItemPage() {
               </span>
             </div>
           </div>
+          <ModalDeleteInvoice
+            isOpenModal={isOpenModal}
+            id={id}
+            toggleModal={toggleModal}
+          />
         </div>
       )}
     </div>
