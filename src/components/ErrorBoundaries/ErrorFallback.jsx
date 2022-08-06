@@ -7,5 +7,3 @@ export default function ErrorFallback({error, resetErrorBoundary}) {
     </div>
   )
 }
-
-
