@@ -6,14 +6,3 @@ export default function FullPageError({error, classNames}) {
     </div>
   )
 }
-
-{
-  /* 
-  Error boundariesdan foydalaish uchun, biron-bir komponentni potensial xatolik keltirib chiqarishi mumkin bo'lgan
-  joyini quyidagi misol orqali o'rab olib ishlatish mumkin.
-  
-  
-  <ErrorBoundary FallbackComponent={FullPageError} onError={myErrorHandler}>
-    <ComponentThatMayError />
-  </ErrorBoundary>, */
-}

@@ -8,13 +8,4 @@ export default function ErrorFallback({error, resetErrorBoundary}) {
   )
 }
 
-{
-  /* 
-  Error boundariesdan foydalaish uchun, biron-bir komponentni potensial xatolik keltirib chiqarishi mumkin bo'lgan
-  joyini quyidagi misol orqali o'rab olib ishlatish mumkin.
-  
-  
-  <ErrorBoundary FallbackComponent={ErrorFallback} onError={myErrorHandler}>
-    <ComponentThatMayError />
-  </ErrorBoundary>, */
-}
+
