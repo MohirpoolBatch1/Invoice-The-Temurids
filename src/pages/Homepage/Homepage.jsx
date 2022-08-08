@@ -18,6 +18,7 @@ function Homepage() {
   })
 
   const [datas, setDatas] = useState([])
+
   const [openWindow, setOpenWindow] = useState(false)
   const statusId = useId()
   const [showStatus, setShowStatus] = useState(false)
@@ -29,6 +30,7 @@ function Homepage() {
       [e.target.value]: !statusCheck[e.target.value],
     })
   }
+
   useEffect(() => {
     setDatas(data)
   }, [data])

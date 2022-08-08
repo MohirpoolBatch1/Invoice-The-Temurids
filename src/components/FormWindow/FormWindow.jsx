@@ -22,6 +22,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
       )
     }
   }
+
   function bottomModal() {
     return kindModal === 'edit' ? (
       <>
@@ -57,6 +58,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
       </>
     )
   }
+
   return (
     <div
       onScroll={getScrollValue}
@@ -156,6 +158,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
             Total
           </p>
         </div>
+
         {kindModal === 'edit' ? (
           itemData.map(items => (
             <FormItemsRow

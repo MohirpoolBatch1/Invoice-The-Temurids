@@ -51,6 +51,7 @@ function Button({buttonKind, onClick, className, type, children}) {
   }
   if (buttonKind === addNewItem) {
     btnClasses = `bg-[#F9FAFE] text-gray-400 py-4 px-48 rounded-[1.5rem] hover:bg-gray-200 `
+
     defaultChildren = 'Add New Item'
   }
   if (buttonKind === cancel) {
