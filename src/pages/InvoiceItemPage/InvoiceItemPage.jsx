@@ -29,9 +29,30 @@ function InvoiceItemPage() {
     items,
     total,
   } = data
-  const [bgColor, textColor, dotColor] = status && constantColors[status]
+  const activeColorArr = []
+  if (status === 'paid') {
+    activeColorArr.push(...constantColors.paid)
+  }
+  if (status === 'pending') {
+    activeColorArr.push(...constantColors.pending)
+  }
+  if (status === 'draft') {
+    activeColorArr.push(...constantColors.draft)
+  }
+
+  const [bgColor, textColor, dotColor] = activeColorArr
   return (
     <div className="w-full h-full overflow-x-hidden">
+      {openWindow && (
+        <>
+          <FormWindow
+            setOpenWindow={setOpenWindow}
+            kindModal={'edit'}
+            id={id}
+            itemData={items}
+          />
+        </>
+      )}
       {isLoading && <div>Loading</div>}
       {isSuccess && (
         <div className="ml-[15rem] mr-[17rem] my-9">
@@ -60,7 +81,11 @@ function InvoiceItemPage() {
               </span>
             </div>
             <div className="flex justify-around">
-              <Button buttonKind={'editLight'} className="mr-2" />
+              <Button
+                buttonKind={'editLight'}
+                onClick={() => setOpenWindow(true)}
+                className="mr-2"
+              />
               <Button buttonKind={'delete'} className="mr-2" />
               <Button buttonKind={'markAsPaid'} className="mr-6" />
             </div>

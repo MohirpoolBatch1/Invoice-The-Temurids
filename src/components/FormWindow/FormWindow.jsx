@@ -4,7 +4,7 @@ import FormDropdown from '../Form inputs/FormDropdown.jsx'
 import FormItemsRow from '../FormItemList/FormItemList.jsx'
 import Button from '../Button/Button.jsx'
 
-const FormWindow = ({kindModal, id, setOpenWindow}) => {
+const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
   const buttonsRef = useRef(null)
   function getScrollValue(e) {
     /* Bu yerda scrollBottom scrollni pastdagi qiymatini anglatadi,
@@ -156,20 +156,27 @@ const FormWindow = ({kindModal, id, setOpenWindow}) => {
             Total
           </p>
         </div>
-        <FormItemsRow
-          id={1}
-          itemName={'Banner Design'}
-          qty={1}
-          price={156.0}
-          total={156.0}
-        />
-        <FormItemsRow
-          id={2}
-          itemName={'Email Design'}
-          qty={2}
-          price={200}
-          total={400.0}
-        />
+        {kindModal === 'edit' ? (
+          itemData.map(items => (
+            <FormItemsRow
+              key={items.id}
+              id={items.id}
+              itemName={items.name}
+              qty={items.quantity}
+              price={items.price}
+              total={items.total}
+            />
+          ))
+        ) : (
+          <FormItemsRow
+            id={1}
+            itemName={''}
+            qty={0}
+            price={0}
+            total={0}
+          /> /* Bu yerini POST methodini qiladiigan dasturchi tugatib qo'yadi */
+        )}
+
         <Button className={'mt-5'} buttonKind={'addNewItem'} type={'button'} />
       </div>
       <div
