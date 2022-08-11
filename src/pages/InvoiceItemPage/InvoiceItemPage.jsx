@@ -27,7 +27,17 @@ function InvoiceItemPage() {
     items,
     total,
   } = data
-  const [bgColor, textColor, dotColor] = status && constantColors[status]
+  const activeColorArr = []
+  if (status === 'paid') {
+    activeColorArr.push(...constantColors.paid)
+  }
+  if (status === 'pending') {
+    activeColorArr.push(...constantColors.pending)
+  }
+  if (status === 'draft') {
+    activeColorArr.push(...constantColors.draft)
+  }
+  const [bgColor, textColor, dotColor] = activeColorArr
   return (
     <div className="w-full h-full overflow-x-hidden">
       {isLoading && <div>Loading</div>}
