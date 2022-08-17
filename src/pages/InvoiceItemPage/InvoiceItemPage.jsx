@@ -6,7 +6,7 @@ import {formatDate} from '../../utils/index'
 import {useInvoiceItemDetailsQuery} from '../../services/invoiceApi'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
-import ModalDeleteInvoice from './ModalDeleteInvoice'
+import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
 
 function InvoiceItemPage() {
   const [isOpenModal, setIsOpenModal] = useState(false)
