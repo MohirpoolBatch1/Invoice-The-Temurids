@@ -59,18 +59,18 @@ function InvoiceItemPage() {
           <Link to="/">
             <button className="flex flex-row items-center justify-between">
               <img className="mr-5" src={arrowLeft} alt="left" />
-              <span className="mb-1 font-bold hover:text-gray-400">
+              <span className="mb-1 font-bold hover:text-gray-400 dark:text-white">
                 Go back
               </span>
             </button>
           </Link>
-          <div className="w-full h-[5.5] flex items-center justify-between bg-white text-body-1 rounded-[8px] py-3 mt-3">
+          <div className="w-full h-[5.5] flex items-center justify-between bg-white dark:bg-gray-800 text-body-1 rounded-[8px] py-3 mt-3">
             <div className="flex items-center text-xs">
-              <span className="ml-8 text-gray-300 mb-1 font-medium">
+              <span className="ml-8 text-gray-300 dark:text-gray-200 mb-1 font-medium">
                 Status
               </span>
               <span
-                className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold ${bgColor} ${textColor} py-3 px-5 `}
+                className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold ${bgColor} dark:bg-gray-500 ${textColor} py-3 px-5 `}
               >
                 <span className=" relative">
                   <span
@@ -84,13 +84,13 @@ function InvoiceItemPage() {
               <Button
                 buttonKind={'editLight'}
                 onClick={() => setOpenWindow(true)}
-                className="mr-2"
+                className="mr-2 dark:bg-gray-500 dark:text-gray-200"
               />
               <Button buttonKind={'delete'} className="mr-2" />
               <Button buttonKind={'markAsPaid'} className="mr-6" />
             </div>
           </div>
-          <div className="w-full flex flex-col justify-between bg-white text-body-1 rounded-[8px] mt-3 p-10">
+          <div className="w-full flex flex-col justify-between bg-white dark:bg-gray-800 text-body-1 rounded-[8px] mt-3 p-10">
             <div className="flex w-full justify-between">
               <div className="flex flex-col">
                 <h3>

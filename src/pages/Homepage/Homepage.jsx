@@ -10,7 +10,6 @@ import FormWindow from '../../components/FormWindow/FormWindow.jsx'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
-
   const [statusCheck, setStatusCheck] = useState({
     draft: false,
     pending: false,
@@ -53,8 +52,10 @@ function Homepage() {
       )}
       <div className="  flex justify-between   h-16 mt-12  items-center mb-16 ">
         <div className=" flex flex-col  ">
-          <h1 className="text-gray-600 font-bold  ">Invoices</h1>
-          <p className="text-body-1 text-gray-300 font-normal ">
+          <h1 className="text-gray-700 font-bold dark:text-white  ">
+            Invoices
+          </h1>
+          <p className="text-body-1 text-gray-300 dark:text-gray-200 font-normal ">
             {datas?.length > 0
               ? `There are  ${datas.length} total ${chosenStatus} ${
                   datas.length > 1 ? 'invoices' : 'invoice'
@@ -68,7 +69,7 @@ function Homepage() {
               onClick={() => setShowStatus(!showStatus)}
               className="flex items-center m-auto "
             >
-              <span className="font-bold text-body-1 text-gray-600 mr-4 ">
+              <span className="font-bold text-body-1 text-gray-600 dark:text-white mr-4 ">
                 Filter by status
               </span>
               <img
@@ -118,16 +119,16 @@ function Homepage() {
         </div>
       </div>
       {/* main part */}
-      {isLoading && <h2>Loading...</h2>}
+      {isLoading && <h2 className="dark:text-white">Loading...</h2>}
       {isSuccess &&
         datas?.map(invoice => <InvoiceItem key={invoice.id} {...invoice} />)}
       {data && data.length === 0 && (
         <div className="m-auto w-72  my-10 flex flex-col items-center  ">
           <img src={EmptyEmail} alt="" />
-          <h2 className="text-gray-600 font-bold mt-6">
+          <h2 className="text-gray-600 font-bold mt-6 dark:text-white">
             There is nothing here
           </h2>
-          <p className="text-body-1 text-gray-300 text-center mt-4 w-42 ">
+          <p className="text-body-1 font-normal text-gray-300 text-center mt-4 w-42 dark:text-gray-200">
             Create an invoice by clicking the
             <br />
             <span className="font-bold"> New Invoice</span> button and get

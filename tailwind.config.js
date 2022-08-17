@@ -5,6 +5,7 @@ const {mono: defaultFontFamily} = defaultTheme.fontFamily
 
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'class',
   theme: {
     screens: {
       mobile: '23.4rem',
