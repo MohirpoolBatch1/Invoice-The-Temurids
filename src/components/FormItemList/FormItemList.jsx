@@ -30,7 +30,6 @@ function FormItemsRow({id, name, qty, price, setItemsRow}) {
   }, [formValue])
   return (
     <div id={id} className="flex mt-4 space-between">
-      {console.log(formValue)}
       <input
         placeholder="Item name"
         name={name}

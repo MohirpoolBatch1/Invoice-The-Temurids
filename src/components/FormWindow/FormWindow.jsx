@@ -241,7 +241,6 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
             buttonKind={'addNewItem'}
             type={'button'}
           />
-          {console.log(itemsRow)}
         </div>
 
         <div
