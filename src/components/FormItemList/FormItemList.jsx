@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import DeleteIcon from '../../assets/icon-delete.svg'
 
 function FormItemsRow({id, name, qty, price, setItemsRow}) {
@@ -19,15 +19,18 @@ function FormItemsRow({id, name, qty, price, setItemsRow}) {
       ...prevState,
       total: prevState.qty * prevState.price,
     }))
+  }
+
+  useEffect(() => {
     setItemsRow(prev => {
       const copy = [...prev]
       copy[id - 1] = formValue
       return copy
     })
-  }
-
+  }, [formValue])
   return (
     <div id={id} className="flex mt-4 space-between">
+      {console.log(formValue)}
       <input
         placeholder="Item name"
         name={name}

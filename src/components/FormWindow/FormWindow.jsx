@@ -51,7 +51,6 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
       description: e.target[12].value,
       items: itemsRow,
     }).unwrap()
-    console.log(itemsRow)
   }
   function bottomModal() {
     return kindModal === 'edit' ? (
@@ -242,6 +241,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
             buttonKind={'addNewItem'}
             type={'button'}
           />
+          {console.log(itemsRow)}
         </div>
 
         <div
