@@ -1,9 +1,15 @@
-export default function ErrorFallback({error, resetErrorBoundary}) {
+export default function ErrorFallback({error, resetErrorBoundary, children}) {
   return (
     <div role="alert">
-      <p>Something went wrong:</p>
-      <pre>{error.message}</pre>
-      <button onClick={resetErrorBoundary}>Try again</button>
+      {error ? (
+        <div>
+          <p>Something went wrong:</p>
+          <pre>{error.message}</pre>
+          <button onClick={resetErrorBoundary}>Try again</button>
+        </div>
+      ) : (
+        children
+      )}
     </div>
   )
 }
