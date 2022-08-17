@@ -9,7 +9,7 @@ const FormInput = ({labelText, inputType, className, name, id}) => {
   return (
     <label
       htmlFor={id}
-      className={`font-spartan ${className} text-xs flex flex-col text-gray-400 font-medium`}
+      className={`font-spartan  ${className} text-xs flex flex-col text-gray-400  dark:text-gray-200 font-medium`}
     >
       {labelText}
       {inputType !== 'date' ? (
@@ -17,11 +17,11 @@ const FormInput = ({labelText, inputType, className, name, id}) => {
           id={id}
           name={name}
           type={inputType}
-          className="rounded mt-[0.625rem] p-3 border border-gray-200 outline-0 focus:outline-1 outline-gray-400 text-xs box-border text-gray-600 font-bold"
+          className="rounded  mt-[0.625rem] p-3 border border-gray-200 outline-0 focus:outline-1 outline-gray-400 text-gray-600 dark:bg-gray-800 dark:border-gray-500 dark:text-white text-xs box-border    font-bold"
         />
       ) : (
         <DatePicker
-          className={`mt-[0.625rem] p-3 border ${className} border-gray-200 outline-0 focus:outline-1 outline-gray-400 text-xs box-border text-gray-600 font-bold`}
+          className={`mt-[0.625rem] p-3 border ${className} border-gray-200 outline-0 focus:outline-1 outline-gray-400 dark:bg-gray-800 dark:border-gray-500 text-xs box-border text-gray-600 dark:text-white  font-bold`}
           selected={startDate}
           onSelect={13}
           onChange={date => setStartDate(date)}

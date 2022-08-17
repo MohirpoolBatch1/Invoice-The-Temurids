@@ -7,6 +7,7 @@ import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
 import {useInvoicesQuery} from '../../services/invoiceApi'
 import FormWindow from '../../components/FormWindow/FormWindow.jsx'
+// import {opacity} from 'tailwindcss/defaultTheme.js'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
@@ -44,13 +45,17 @@ function Homepage() {
   }, [data, statusCheck])
 
   return (
-    <div className="w-full h-full overflow-y-scroll px-60 ">
+    <div className={`w-full h-full  overflow-y-scroll px-60 dark:bg-gray-600`}>
       {openWindow && (
         <>
           <FormWindow setOpenWindow={setOpenWindow} />
         </>
       )}
-      <div className="  flex justify-between   h-16 mt-12  items-center mb-16 ">
+      <div
+        className={`  flex justify-between ${
+          openWindow ? 'opacity-60' : ''
+        }  h-16 mt-12  items-center mb-16 `}
+      >
         <div className=" flex flex-col  ">
           <h1 className="text-gray-700 font-bold dark:text-white  ">
             Invoices

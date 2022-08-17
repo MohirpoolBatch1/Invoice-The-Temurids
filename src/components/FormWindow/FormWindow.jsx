@@ -27,7 +27,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
     return kindModal === 'edit' ? (
       <>
         <Button
-          className={'invisible'}
+          className={'invisible dark:text-white'}
           buttonKind={'discard'}
           type={'button'}
         />
@@ -52,7 +52,11 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
           type={'button'}
         />
         <div className="flex">
-          <Button buttonKind={'saveAsDraftLight'} type={'button'} />
+          <Button
+            buttonKind={'saveAsDraftLight'}
+            type={'button'}
+            className={`dark:text-gray-200`}
+          />
           <Button buttonKind={'saveSend'} type={'button'} className={'ml-2'} />
         </div>
       </>
@@ -62,10 +66,10 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
   return (
     <div
       onScroll={getScrollValue}
-      className="absolute left-0 z-20 bg-white w-[45rem] rounded-r-3xl h-full overflow-y-scroll scroll-smooth scroll-mr-8 scroll-pr-3.5"
+      className="absolute left-0 z-20 bg-white dark:bg-gray-700 w-[45rem] rounded-r-3xl h-full overflow-y-scroll scroll-smooth scroll-mr-8 scroll-pr-3.5"
     >
       <div className="pr-14 pl-40 pt-14 pb-8">
-        <h1 className="font-bold">
+        <h1 className="font-bold dark:text-white">
           {kindModal === 'edit' ? `Edit ${id}` : 'New Invoice'}
         </h1>
         <p className="body-1 text-purple font-bold mt-12">Bill From</p>
@@ -131,7 +135,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
             inputType={'date'}
           />
           <FormDropdown
-            className={'w-60 pl-4'}
+            className={'w-60 pl-4 '}
             labelText={'Payment Terms'}
             inputType={'text'}
           />
@@ -144,19 +148,11 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
         <h4 className="body-2 mt-8 text-[#777F98] text-[18px] font-bold">
           Item List
         </h4>
-        <div className="flex content-between mt-4">
-          <p className={'font-spartan text-xs w-52 text-gray-400 font-medium'}>
-            Item Name
-          </p>
-          <p className={'font-spartan text-xs w-12 text-gray-400 font-medium'}>
-            Qty.
-          </p>
-          <p className={'font-spartan text-xs w-24 text-gray-400 font-medium'}>
-            Price
-          </p>
-          <p className={'font-spartan text-xs w-14 text-gray-400 font-medium'}>
-            Total
-          </p>
+        <div className="flex content-between mt-4 text-gray-400 font-medium font-spartan text-xs dark:text-gray-200">
+          <p className={' w-52 '}>Item Name</p>
+          <p className={' w-12 '}>Qty.</p>
+          <p className={' w-24 '}>Price</p>
+          <p className={' w-14 '}>Total</p>
         </div>
 
         {kindModal === 'edit' ? (
@@ -180,11 +176,15 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
           /> /* Bu yerini POST methodini qiladiigan dasturchi tugatib qo'yadi */
         )}
 
-        <Button className={'mt-5'} buttonKind={'addNewItem'} type={'button'} />
+        <Button
+          className={'mt-5 dark:bg-gray-500 dark:text-gray-200'}
+          buttonKind={'addNewItem'}
+          type={'button'}
+        />
       </div>
       <div
         ref={buttonsRef}
-        className="mt-2.5 shadow-[0_-60px_70px_-15px_rgba(0,0,0,0.1)] bg-white py-8 pr-14 pl-40 rounded-br-[20px] rounded-tr-[20px] flex sticky bottom-0 justify-between"
+        className="mt-2.5 shadow-[0_-60px_70px_-15px_rgba(0,0,0,0.1)] bg-white dark:bg-gray-700 py-8 pr-14 pl-40 rounded-br-[20px] rounded-tr-[20px] flex sticky bottom-0 justify-between"
       >
         {bottomModal()}
       </div>
