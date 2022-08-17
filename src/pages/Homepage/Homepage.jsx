@@ -6,6 +6,7 @@ import EmptyEmail from '../../assets/illustration-empty.svg'
 import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
 import {useInvoicesQuery} from '../../services/invoiceApi'
+import FormWindow from '../../components/FormWindow/FormWindow.jsx'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
@@ -17,6 +18,8 @@ function Homepage() {
   })
 
   const [datas, setDatas] = useState([])
+
+  const [openWindow, setOpenWindow] = useState(false)
   const statusId = useId()
   const [showStatus, setShowStatus] = useState(false)
   const allStatus = Object.keys(statusCheck)
@@ -27,6 +30,7 @@ function Homepage() {
       [e.target.value]: !statusCheck[e.target.value],
     })
   }
+
   useEffect(() => {
     setDatas(data)
   }, [data])
@@ -42,6 +46,11 @@ function Homepage() {
 
   return (
     <div className="w-full h-full overflow-y-scroll px-60 ">
+      {openWindow && (
+        <>
+          <FormWindow setOpenWindow={setOpenWindow} />
+        </>
+      )}
       <div className="  flex justify-between   h-16 mt-12  items-center mb-16 ">
         <div className=" flex flex-col  ">
           <h1 className="text-gray-600 font-bold  ">Invoices</h1>
@@ -99,7 +108,11 @@ function Homepage() {
             </Transition>
           </Menu>
 
-          <Button buttonKind="newInvoice" onClick={() => {}} type="button">
+          <Button
+            buttonKind="newInvoice"
+            onClick={() => setOpenWindow(true)}
+            type="button"
+          >
             New Invoice
           </Button>
         </div>
