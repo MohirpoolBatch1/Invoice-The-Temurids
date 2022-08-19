@@ -59,7 +59,7 @@ function InvoiceItemPage() {
           <Link to="/">
             <button className="flex flex-row items-center justify-between">
               <img className="mr-5" src={arrowLeft} alt="left" />
-              <span className="mb-1 font-bold hover:text-gray-400 dark:text-white">
+              <span className="mb-1 font-bold hover:text-gray-400 dark:text-white dark:hover:text-gray-300">
                 Go back
               </span>
             </button>
@@ -84,7 +84,7 @@ function InvoiceItemPage() {
               <Button
                 buttonKind={'editLight'}
                 onClick={() => setOpenWindow(true)}
-                className="mr-2 dark:bg-gray-500 dark:text-gray-200"
+                className="mr-2 dark:bg-gray-500  dark:hover:bg-white text-gray-400"
               />
               <Button buttonKind={'delete'} className="mr-2" />
               <Button buttonKind={'markAsPaid'} className="mr-6" />

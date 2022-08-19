@@ -25,14 +25,22 @@ const FormDropdown = ({labelText, className}) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-3 max-h-60 w-full overflow-auto rounded-lg border-none bg-white dark:bg-gray-800 py-1 shadow-lg text-xs z-10">
+            <Listbox.Options className="absolute mt-3 max-h-60 w-full overflow-auto rounded-lg border-none bg-white dark:bg-gray-500 py-1 shadow-lg text-xs z-10">
               {netDays.map((days, daysIndex, array) => (
                 <Listbox.Option
                   key={daysIndex}
                   className={({active}) =>
                     `relative cursor-pointer select-none py-2 pl-3 pr-4 
-                    ${active ? 'text-purple' : 'text-gray-600 dark:text-white'}
-                   ${daysIndex === array.length - 1 ? '' : 'border-b-[1px]'}
+                    ${
+                      active
+                        ? 'text-purple'
+                        : 'text-gray-600 dark:text-gray-200'
+                    }
+                   ${
+                     daysIndex === array.length - 1
+                       ? ''
+                       : 'border-b-[1px] dark:border-b-gray-800'
+                   }
                     `
                   }
                   value={days}
