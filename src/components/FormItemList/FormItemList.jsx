@@ -1,27 +1,39 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import DeleteIcon from '../../assets/icon-delete.svg'
 
-function FormItemsRow({id, itemName, qty, price, total}) {
+function FormItemsRow({id, name, qty, price, setItemsRow}) {
   const [formValue, setFormValue] = useState({
-    [itemName]: itemName,
-    [qty]: qty,
-    [price]: price,
+    name,
+    qty: 1,
+    price: 256,
+    id,
+    total: 256,
   })
 
   function handleChange(event) {
-    const {name, value} = event.target
     setFormValue(prevState => ({
       ...prevState,
-      [name]: value,
+      [event.target.name]: event.target.value,
+    }))
+    setFormValue(prevState => ({
+      ...prevState,
+      total: prevState.qty * prevState.price,
     }))
   }
 
+  useEffect(() => {
+    setItemsRow(prev => {
+      const copy = [...prev]
+      copy[id - 1] = formValue
+      return copy
+    })
+  }, [formValue])
   return (
     <div id={id} className="flex mt-4 space-between">
       <input
         placeholder="Item name"
-        name={itemName}
-        value={formValue[itemName]}
+        name={name}
+        value={formValue[name]}
         onChange={handleChange}
         type="text"
         className="max-w-52 rounded mt-[0.625rem] p-4 border border-gray-200 outline-0 focus:outline-1 outline-gray-400 text-xs box-border text-gray-600 font-bold"
@@ -47,9 +59,13 @@ function FormItemsRow({id, itemName, qty, price, total}) {
           'font-spartan w-14 ml-4 mt-7 text-xs text-gray-300 font-bold'
         }
       >
-        {total}
+        {formValue.total}
       </div>
-      <button>
+      <button
+        onClick={() =>
+          setItemsRow(item => item.filter(items => items.id !== id))
+        }
+      >
         <img src={DeleteIcon} alt="logo" />
       </button>
     </div>

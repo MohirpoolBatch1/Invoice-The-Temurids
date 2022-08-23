@@ -11,7 +11,10 @@ const FormDropdown = ({labelText, className}) => {
       <label className="text-xs text-gray-400">{labelText}</label>
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default border border-gray-200 bg-white p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center">
+          <Listbox.Button
+            value={selected}
+            className="relative w-full cursor-default border border-gray-200 bg-white p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center"
+          >
             <span className="block text-sm truncate text-gray-600 font-bold">
               {selected}
             </span>

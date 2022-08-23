@@ -23,7 +23,6 @@ const FormInput = ({labelText, inputType, className, name, id}) => {
         <DatePicker
           className={`mt-[0.625rem] p-3 border ${className} border-gray-200 outline-0 focus:outline-1 outline-gray-400 text-xs box-border text-gray-600 font-bold`}
           selected={startDate}
-          onSelect={13}
           onChange={date => setStartDate(date)}
         />
       )}
