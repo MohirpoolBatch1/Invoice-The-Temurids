@@ -6,9 +6,11 @@ import NotFound from './pages/NotFoud/NotFound.jsx'
 import InvoiceItemPage from './pages/InvoiceItemPage/InvoiceItemPage.jsx'
 import {bgColor} from './constants'
 
+const themeColor = '#0C0E16'
+
 const SignedUser = () => (
   <div
-    className={`App font-spartan font-medium h-screen w-screen flex  bg-[${bgColor}]`}
+    className={`App font-spartan font-medium h-screen w-screen flex bg-gray-600  `}
   >
     <InvoiceRoutes />
   </div>
