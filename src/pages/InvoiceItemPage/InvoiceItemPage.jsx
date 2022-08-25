@@ -7,8 +7,10 @@ import {useInvoiceItemDetailsQuery} from '../../services/invoiceApi'
 import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
 import FormWindow from '../../components/FormWindow/FormWindow.jsx'
+import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
 
 function InvoiceItemPage() {
+  const [isOpenModal, setIsOpenModal] = useState(false)
   const [openWindow, setOpenWindow] = useState(false)
   const {invoiceId} = useParams()
   const {
@@ -40,6 +42,9 @@ function InvoiceItemPage() {
     activeColorArr.push(...constantColors.draft)
   }
 
+  function toggleModal() {
+    setIsOpenModal(!isOpenModal)
+  }
   const [bgColor, textColor, dotColor] = activeColorArr
   return (
     <div className="w-full h-full overflow-x-hidden">
@@ -86,7 +91,11 @@ function InvoiceItemPage() {
                 onClick={() => setOpenWindow(true)}
                 className="mr-2"
               />
-              <Button buttonKind={'delete'} className="mr-2" />
+              <Button
+                buttonKind={'delete'}
+                onClick={() => setIsOpenModal(!isOpenModal)}
+                className="mr-2"
+              />
               <Button buttonKind={'markAsPaid'} className="mr-6" />
             </div>
           </div>
@@ -179,6 +188,11 @@ function InvoiceItemPage() {
               </span>
             </div>
           </div>
+          <ModalDeleteInvoice
+            isOpenModal={isOpenModal}
+            id={id}
+            toggleModal={toggleModal}
+          />
         </div>
       )}
     </div>
