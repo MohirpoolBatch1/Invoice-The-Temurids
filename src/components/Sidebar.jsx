@@ -6,30 +6,17 @@ import moon from '../assets/icon-moon.svg'
 import sun from '../assets/icon-sun.svg'
 import {ThemeContext} from '../themeContext'
 
-<<<<<<< HEAD
-const Sidebar = () => (
-  <div className="w-[6.5rem] relative z-30 flex flex-wrap content-between h-full rounded-r-3xl bg-[#373B53]">
-    <div className="w-full h-[6.5rem] bg-purple rounded-tr-3xl flex justify-center items-center">
-      <Link to={'/'}>
-        <img src={logo} alt="logo" />
-      </Link>
-    </div>
-    <div className="w-full flex-col flex rounded-br-3xl justify-center items-center">
-      <div className="mb-8">
-        <img src={moon} alt="img" />
-=======
 const Sidebar = () => {
   const {state, dispatch} = useContext(ThemeContext)
   const changeTheme = () => {
     dispatch({type: 'TOGGLE_THEME'})
   }
   return (
-    <div className="w-[6.5rem] flex flex-wrap content-between h-full rounded-r-3xl bg-[#373B53]">
+    <div className="w-[6.5rem] flex flex-wrap z-30 content-between h-full rounded-r-3xl bg-[#373B53]">
       <div className="w-full h-[6.5rem] bg-purple rounded-tr-3xl flex justify-center items-center">
         <Link to={'/'}>
           <img src={logo} alt="logo" />
         </Link>
->>>>>>> d28cee4 (feat(IT-31-changeThemeFunction-added-to-icon))
       </div>
 
       <div className="w-full flex-col flex rounded-br-3xl justify-center items-center">

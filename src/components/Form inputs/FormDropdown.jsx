@@ -8,13 +8,6 @@ const FormDropdown = ({labelText, className}) => {
 
   return (
     <div className={`flex-grow w-full relative sm:mb-0 ${className}`}>
-<<<<<<< HEAD
-      <label className="text-xs text-gray-400">{labelText}</label>
-      <Listbox value={selected} onChange={setSelected}>
-        <div className="relative">
-          <Listbox.Button className="relative w-full cursor-default border border-gray-200 bg-white p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center">
-            <span className="block text-sm truncate text-gray-600 font-bold">
-=======
       <label className="text-xs text-gray-400 dark:text-gray-200">
         {labelText}
       </label>
@@ -22,7 +15,6 @@ const FormDropdown = ({labelText, className}) => {
         <div className="relative ">
           <Listbox.Button className="relative w-full cursor-default border border-gray-200 bg-white dark:bg-gray-800 dark:border-gray-500 p-3 text-left focus:outline-none focus-visible:border-purple text-xs  flex justify-between items-center">
             <span className="block text-sm truncate text-gray-600 dark:text-white font-bold">
->>>>>>> abcd3a1 (fix(IT-36)-changes-added)
               {selected}
             </span>
             <img src={ArrowDown} alt="Options" className="cursor-pointer" />
@@ -33,14 +25,22 @@ const FormDropdown = ({labelText, className}) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-3 max-h-60 w-full overflow-auto rounded-lg border-none bg-white dark:bg-gray-800 py-1 shadow-lg text-xs z-10">
+            <Listbox.Options className="absolute mt-3 max-h-60 w-full overflow-auto rounded-lg border-none bg-white dark:bg-gray-500 py-1 shadow-lg text-xs z-10">
               {netDays.map((days, daysIndex, array) => (
                 <Listbox.Option
                   key={daysIndex}
                   className={({active}) =>
                     `relative cursor-pointer select-none py-2 pl-3 pr-4 
-                    ${active ? 'text-purple' : 'text-gray-600 dark:text-white'}
-                   ${daysIndex === array.length - 1 ? '' : 'border-b-[1px]'}
+                    ${
+                      active
+                        ? 'text-purple'
+                        : 'text-gray-600 dark:text-gray-200'
+                    }
+                   ${
+                     daysIndex === array.length - 1
+                       ? ''
+                       : 'border-b-[1px] dark:border-b-gray-800'
+                   }
                     `
                   }
                   value={days}

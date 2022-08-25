@@ -102,18 +102,18 @@ function Homepage() {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <Menu.Items className="absolute mt-6 h-32 w-48   rounded-lg bg-white shadow-[0_10px_20px_rgba(72,84,159,0.25)]">
+              <Menu.Items className="absolute mt-6 h-32 w-48   rounded-lg bg-white dark:bg-gray-500 shadow-[0_10px_20px_rgba(72,84,159,0.25)]">
                 {allStatus.map(status => (
                   <Menu.Item key={`${statusId}${status}`}>
                     <label
                       htmlFor={status}
-                      className="text-gray-900 group  flex w-full items-center rounded-md px-2 py-2 text-sm cursor-pointer"
+                      className="text-gray-600 dark:text-white group   flex w-full items-center rounded-md px-2 py-2 text-sm cursor-pointer"
                     >
                       <input
                         onChange={handleChange}
                         value={status}
                         type="checkbox"
-                        className="mr-2 accent-purple  cursor-pointer  "
+                        className="mr-2 accent-pink dark:border-purple  dark:bg-gray-800  cursor-pointer  "
                         id={status}
                         checked={statusCheck[`${status}`]}
                       />

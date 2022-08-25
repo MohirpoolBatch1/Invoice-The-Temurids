@@ -7,7 +7,6 @@ import Button from '../Button/Button.jsx'
 const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
   const buttonsRef = useRef(null)
   const [errorValidation, setErrorValidation] = useState('')
-
   const [formData, setFormData] = useState({})
   function getScrollValue(e) {
     /* Bu yerda scrollBottom scrollni pastdagi qiymatini anglatadi,
