@@ -5,12 +5,20 @@ import Homepage from './pages/Homepage/Homepage.jsx'
 import NotFound from './pages/NotFoud/NotFound.jsx'
 import InvoiceItemPage from './pages/InvoiceItemPage/InvoiceItemPage.jsx'
 import {bgColor} from './constants'
+<<<<<<< HEAD
 
 const themeColor = '#0C0E16'
 
 const SignedUser = () => (
   <div
     className={`App font-spartan font-medium h-screen w-screen flex bg-gray-600  `}
+=======
+
+// const themeColor = '#0C0E16'
+const SignedUser = () => (
+  <div
+    className={`App font-spartan font-medium h-screen w-screen flex bg-[${bgColor}] dark:bg-gray-700`}
+>>>>>>> abcd3a1 (fix(IT-36)-changes-added)
   >
     <InvoiceRoutes />
   </div>
