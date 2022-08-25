@@ -8,6 +8,7 @@ import {constantColors} from '../../components/InvoiceItem/constantColors'
 import ItemRow from './ItemRow.jsx'
 import FormWindow from '../../components/FormWindow/FormWindow.jsx'
 import ModalDeleteInvoice from './ModalDeleteInvoice.jsx'
+import Loading from '../../components/Loading/Loading.jsx'
 
 function InvoiceItemPage() {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -58,7 +59,11 @@ function InvoiceItemPage() {
           />
         </>
       )}
-      {isLoading && <div>Loading</div>}
+      {isLoading && (
+        <div className="w-full h-full flex items-center justify-center">
+          <Loading />
+        </div>
+      )}
       {isSuccess && (
         <div className="ml-[15rem] mr-[17rem] my-9">
           <Link to="/">

@@ -7,6 +7,7 @@ import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
 import {useInvoicesQuery} from '../../services/invoiceApi'
 import FormWindow from '../../components/FormWindow/FormWindow.jsx'
+import Loading from '../../components/Loading/Loading.jsx'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
@@ -118,7 +119,11 @@ function Homepage() {
         </div>
       </div>
       {/* main part */}
-      {isLoading && <h2>Loading...</h2>}
+      {isLoading && (
+        <div className="w-full h-full">
+          <Loading />
+        </div>
+      )}
       {isSuccess &&
         datas?.map(invoice => <InvoiceItem key={invoice.id} {...invoice} />)}
       {data && data.length === 0 && (
