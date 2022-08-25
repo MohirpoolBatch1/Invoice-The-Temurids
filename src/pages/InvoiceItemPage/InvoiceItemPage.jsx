@@ -70,11 +70,7 @@ function InvoiceItemPage() {
                 Status
               </span>
               <span
-<<<<<<< HEAD
-                className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold ${bgColor} ${textColor} py-3 px-5 `}
-=======
                 className={`flex flex-col justify-center ml-5 rounded-[6px] font-bold ${bgColor} dark:bg-gray-500 ${textColor} py-3 px-5 `}
->>>>>>> abcd3a1 (fix(IT-36)-changes-added)
               >
                 <span className=" relative">
                   <span
@@ -88,15 +84,7 @@ function InvoiceItemPage() {
               <Button
                 buttonKind={'editLight'}
                 onClick={() => setOpenWindow(true)}
-<<<<<<< HEAD
-<<<<<<< HEAD
-                className="mr-2"
-=======
-                className="mr-2 dark:bg-gray-500 dark:text-gray-200"
->>>>>>> abcd3a1 (fix(IT-36)-changes-added)
-=======
                 className="mr-2 dark:bg-gray-500  dark:hover:bg-white text-gray-400"
->>>>>>> b45383c (feat(IT-36)-forminput-validation-added)
               />
               <Button buttonKind={'delete'} className="mr-2" />
               <Button buttonKind={'markAsPaid'} className="mr-6" />
