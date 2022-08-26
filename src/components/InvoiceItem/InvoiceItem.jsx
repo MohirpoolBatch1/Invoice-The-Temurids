@@ -19,21 +19,26 @@ export default function InvoiceItem({
     style: 'currency',
     currency: 'GBP',
   }).format(total)
-  const [bgColor, textColor, dotColor] = constantColors[status]
+  const [bgColor, textColor, dotColor] = constantColors.pending
   return (
-    <Link className="w-full bg-red " to={`/invoice/${id}`}>
-      <div className="flex justify-between items-center bg-white h-16  mb-4 px-8 text-lg rounded-xl ">
-        <span className="font-bold w-12 text-body-1  ">{id}</span>
-        <span className="text-gray-300 w-24  text-body-1">
+    <Link className="w-full " to={`/invoice/${id}`}>
+      <div className="flex justify-between items-center bg-white dark:bg-gray-800 h-16  mb-4 px-8 text-lg rounded-xl ">
+        <h3 className="font-bold w-12 text-body-1 text-gray-600 dark:text-white  ">
+          <span className="text-gray-400">#</span>
+          {id}
+        </h3>
+        <span className="text-gray-300 w-24  text-body-1 dark:text-gray-200">
           {clientPaymentDue}
         </span>
-        <span className="text-gray-300 w-24  text-body-1">{clientName}</span>
-        <span className="font-bold text-right text-base w-24 ">
+        <span className="text-gray-300 w-24  text-body-1 dark:text-white">
+          {clientName}
+        </span>
+        <span className="font-bold text-right text-base w-24 dark:text-white ">
           {clientTotalExpanse}
         </span>
         <div className="flex items-center ">
           <div
-            className={`${bgColor} ${textColor} flex w-28  h-10 font-bold rounded-lg mr-5`}
+            className={`${bgColor} ${textColor} dark:bg-gray-500   flex w-28  h-10 font-bold rounded-lg mr-5`}
           >
             <div className="flex m-auto items-center ">
               <div
