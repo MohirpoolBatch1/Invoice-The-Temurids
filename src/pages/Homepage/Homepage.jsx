@@ -7,7 +7,6 @@ import ArrowDownIcon from '../../assets/icon-arrow-down.svg'
 import ArrowUpIcon from '../../assets/icon-arrow-up.svg'
 import {useInvoicesQuery} from '../../services/invoiceApi'
 import FormWindow from '../../components/FormWindow/FormWindow.jsx'
-// import {opacity} from 'tailwindcss/defaultTheme.js'
 
 function Homepage() {
   const {data, isLoading, isSuccess} = useInvoicesQuery()
