@@ -71,7 +71,7 @@ const FormWindow = ({kindModal, id, setOpenWindow, itemData}) => {
           <Button
             buttonKind={'saveAsDraftLight'}
             type={'submit'}
-            className={`dark:text-gray-200`}
+            className={'dark:text-gray-200'}
           />
           <Button buttonKind={'saveSend'} type={'submit'} className={'ml-2'} />
         </div>
