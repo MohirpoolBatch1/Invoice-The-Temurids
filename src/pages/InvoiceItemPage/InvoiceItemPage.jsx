@@ -39,7 +39,6 @@ function InvoiceItemPage() {
   if (status === 'draft') {
     activeColorArr.push(...constantColors.draft)
   }
-
   const [bgColor, textColor, dotColor] = activeColorArr
   return (
     <div className="w-full h-full overflow-x-hidden">
